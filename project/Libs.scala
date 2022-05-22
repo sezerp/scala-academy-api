@@ -44,10 +44,10 @@ object Libs {
   )
 
   val coreDeps = Seq(
-    "org.typelevel"               %% "cats-effect"              % "3.3.12",
-    "com.softwaremill.common"     %% "tagging"                  % "2.2.1",
-    "io.github.jmcardon"          %% "tsec-password"            % TsecV,
-    "io.github.jmcardon"          %% "tsec-cipher-jca"          % TsecV,
+    "org.typelevel"           %% "cats-effect"     % "3.3.12",
+    "com.softwaremill.common" %% "tagging"         % "2.2.1",
+    "io.github.jmcardon"      %% "tsec-password"   % TsecV,
+    "io.github.jmcardon"      %% "tsec-cipher-jca" % TsecV
   ) ++ macwireDependencies
 
   val httpDeps = Seq(
@@ -59,7 +59,8 @@ object Libs {
     "org.http4s"                    %% "http4s-blaze-client"           % Http4sV,
     "org.http4s"                    %% "http4s-circe"                  % Http4sV,
     "com.softwaremill.sttp.client3" %% "async-http-client-backend-fs2" % SttpV,
-    "com.softwaremill.sttp.client3" %% "slf4j-backend"                 % SttpV
+    "com.softwaremill.sttp.client3" %% "slf4j-backend"                 % SttpV,
+    "com.softwaremill.sttp.tapir"   %% "tapir-sttp-stub-server"        % TapirV
   ) ++ jsonDeps ++ loggingDeps ++ configDeps
 
   val allDeps = coreDeps ++ httpDeps ++ unitTestingStack ++ monitoringDeps
