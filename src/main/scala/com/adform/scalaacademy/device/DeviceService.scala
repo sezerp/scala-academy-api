@@ -93,7 +93,7 @@ class DeviceServiceErrorGen(conf: DeviceErrorSimulatorConf) extends FLogging {
     for {
       randomGen <- random
       num       <- randomGen.nextDouble
-      shouldError = if (num < conf.errorProbability) true else false
+      shouldError = conf.errorProbability < num
     } yield shouldError
   }
 
